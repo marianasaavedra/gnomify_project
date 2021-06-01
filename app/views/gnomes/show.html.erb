@@ -1,0 +1,24 @@
+<%= link_to "Back", gnomes_path %>
+  <div class="card-trip">
+  <%= cl_image_tag @gnome.photo.key, width: 400%>
+  <div class="card-trip-infos">
+    <div>
+      <h1> <%= @gnome.name %></h1>
+      <h5> <%= @gnome.power %></h5>
+      <p><%= @gnome.description %> </p>
+    </div>
+    <h2 class="card-trip-pricing"><%= @gnome.price %> €</h2>
+  </div>
+</div>
+</div>
+<div class="calendar">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+    <h2>Date</h2>
+
+    <%= simple_form_for :search, method: "get" do |f| %>
+      <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= f.button :submit, "Go", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
