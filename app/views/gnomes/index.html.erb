@@ -1,0 +1,25 @@
+<div class="container">
+<h1>All Gnomes</h1>
+<%= link_to "Back", root_path %>
+
+<div class="container">
+  <div class="row">
+    <% @gnomes.each do |gnome| %>
+      <div class="card" col-sm-6 col col-md-6 col-lg-4>
+        <p> a photo will go here </p>
+        <h4> <%= link_to gnome.name, gnome_path(gnome) %></h3>
+        <p>Power: <%= gnome.power %> </p>
+        <p> <%= gnome.description %> </p>
+        <p> €<%= gnome.price %> </p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<p>Add in a see more button</p>
+
+  <div>
+    <p> this map will be javacript </p>
+    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibG91aXNlaGlsbGRlc2lnbmVyIiwiYSI6ImNrb29kYjhiYjAxeXkydnN0eHZ2aGw3engifQ.oL5Ty7JG-s7jsPmW7Xo14Q'>
+  </div>
+</div>
