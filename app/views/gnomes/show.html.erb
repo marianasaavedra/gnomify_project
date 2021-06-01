@@ -1,6 +1,6 @@
 <%= link_to "Back", gnomes_path %>
   <div class="card-trip">
-  <img src="" />
+  <%= cl_image_tag @gnome.photo.key, width: 400%>
   <div class="card-trip-infos">
     <div>
       <h1> <%= @gnome.name %></h1>

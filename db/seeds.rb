@@ -20,7 +20,8 @@ url_array.each do |url|
     address: Faker::Address.full_address
   )
   file = URI.open(url)
-  gnome.photo.attach(io: file, filename: url, content_type: 'image/png')
+  gnome.photo.attach(io: file, filename: url, content_type: 'image/jpg')
+  gnome.save
 end
 
 puts 'added gnomes complete'
