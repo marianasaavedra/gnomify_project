@@ -1,16 +1,11 @@
 class GnomesController < ApplicationController
-  before_action :find_gnome, only [:show]
+  # before_action :find_gnome, only: %i[show]
+
+  def show
+    @gnome = Gnome.find(params[:id])
+  end
 
   def index
     @gnomes = Gnome.all
-  end
-
-  def show
-  end
-
-  private
-
-  def find_gnome
-    @gnome = Gnome.find(params[:id])
   end
 end
