@@ -1,25 +1,28 @@
 <div class="container">
-<h1>All Gnomes</h1>
-<%= link_to "Back", root_path %>
+  <h1>All Gnomes</h1>
+  <%= link_to "Back", root_path %>
 
-<div class="container">
-  <div class="row">
+  <div class="cards">
     <% @gnomes.each do |gnome| %>
-      <div class="card" col-sm-6 col col-md-6 col-lg-4>
-        <p> coming soon <%= #cl_image_tag gnome.photo %> </p>
-        <h4> <%= link_to gnome.name, gnome_path(gnome) %></h3>
-        <p>Power: <%= gnome.power %> </p>
+    <div class="card-gnome">
+      <div class="card-category" data-aos="zoom-in" style="background-image: url('<%= cl_image_path gnome.photo.key, height: 300, width: 400, crop: :fill %>')">
+      </div>
+      <div class="card-content">
+        <h3><%= gnome.name %></h3>
+        <p class="title">Power</p>
+        <p> <%= gnome.power %></p>
+        <p class="title">About</p>
         <p> <%= gnome.description %> </p>
         <p> €<%= gnome.price %> </p>
       </div>
-    <% end %>
-  </div>
+    </div>
+      <% end %>
+    </div>
 </div>
 
 <p>Add in a see more button</p>
 
-  <div>
-    <p> this map will be javacript </p>
-    <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibG91aXNlaGlsbGRlc2lnbmVyIiwiYSI6ImNrb29kYjhiYjAxeXkydnN0eHZ2aGw3engifQ.oL5Ty7JG-s7jsPmW7Xo14Q'>
-  </div>
+<div>
+  <p> this map will be javacript </p>
+  <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoibG91aXNlaGlsbGRlc2lnbmVyIiwiYSI6ImNrb29kYjhiYjAxeXkydnN0eHZ2aGw3engifQ.oL5Ty7JG-s7jsPmW7Xo14Q'>
 </div>
