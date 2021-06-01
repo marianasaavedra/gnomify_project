@@ -6,7 +6,7 @@
   <div class="row">
     <% @gnomes.each do |gnome| %>
       <div class="card" col-sm-6 col col-md-6 col-lg-4>
-        <p> a photo will go here </p>
+        <p> coming soon <%= #cl_image_tag gnome.photo %> </p>
         <h4> <%= link_to gnome.name, gnome_path(gnome) %></h3>
         <p>Power: <%= gnome.power %> </p>
         <p> <%= gnome.description %> </p>
