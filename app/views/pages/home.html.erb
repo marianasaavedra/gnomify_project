@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('garden.jpg')%>">
+  <div class="container">
+    <h1>Experience the Gnomes Magic</h1>
+    <a class="btn btn-ghost" href="#">Check them out</a>
+  </div>
+</div>
+
+<h1>Our Gnomies</h1>
+
+<div class="card-container">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('mush.jpg')%>">
+    <p>Meriadoc</p>
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('mushro.jpg')%>">
+    <p>Brandybuck</p>
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('mushroom.jpg')%>">
+    <p>Faramir</p>
+  </div>
+</div>
