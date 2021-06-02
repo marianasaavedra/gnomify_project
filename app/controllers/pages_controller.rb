@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   def my_bookings
   end
   def home
+    @gnomes = Gnome.all.sample(3)
   end
 end
