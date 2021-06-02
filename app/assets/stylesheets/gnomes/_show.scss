@@ -40,10 +40,14 @@
   color: white;
 }
 
-.container {
+.gnome-container {
   width: 1000px;
   margin: 20px auto;
   padding: 30px;
+}
+
+.gnome-container h1{
+  text-align: left;
 }
 
 .calendar {
