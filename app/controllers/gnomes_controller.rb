@@ -4,10 +4,11 @@ class GnomesController < ApplicationController
   def show
       @gnome = Gnome.find(params[:id])
       @booking = Booking.new
-  #   @markers = @gnome.geocoded.map {
-  #       lat: @gnome.latitude,
-  #       lng: @gnome.longitude
-  #     }
+      @markers =  [{
+          lat: @gnome.latitude,
+          lng: @gnome.longitude,
+          image_url: helpers.asset_url('gnomey.png')
+        }]
   end
 
   def index
@@ -16,7 +17,8 @@ class GnomesController < ApplicationController
     @markers = @gnomes.geocoded.map do |gnome|
       {
         lat: gnome.latitude,
-        lng: gnome.longitude
+        lng: gnome.longitude,
+        image_url: helpers.asset_url('gnomey.png')
       }
     end
   end

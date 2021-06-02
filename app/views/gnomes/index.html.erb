@@ -1,14 +1,15 @@
 <div class="container">
-  <h1>All Gnomes</h1>
+  <h1>All our magical Gnomes</h1>
   <%= link_to "Back", root_path %>
 
   <div class="cards">
     <% @gnomes.each do |gnome| %>
+    <%= link_to gnome_path(gnome), class: "text-decoration-none" do %>
     <div class="card-gnome p-0">
       <div class="card-img" style="background-image: url('<%= cl_image_path gnome.photo.key %>')">
       </div>
       <div class="card-gnome-info">
-        <h3><%= gnome.name %></h3>
+        <h3 class="gnome-name"><%= gnome.name %></h3>
         <p class="title">Power</p>
         <p> <%= gnome.power %></p>
         <p class="title">About</p>
@@ -17,9 +18,8 @@
       </div>
     </div>
       <% end %>
+      <% end %>
     </div>
-
-<p>Add in a see more button</p>
 
 </div>
 
