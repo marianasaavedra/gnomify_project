@@ -6,5 +6,6 @@ class PagesController < ApplicationController
   end
 
   def home
+    @gnomes = Gnome.all.sample(3)
   end
 end
