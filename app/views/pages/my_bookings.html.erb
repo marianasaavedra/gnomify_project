@@ -1,0 +1,10 @@
+<h1>My Bookings</h1>
+<% @bookings.each do |booking| %>
+  <div>
+    <%= cl_image_tag booking.gnome.photo.key, height: 400, width: 400, crop: :fill%>
+    <%= booking.gnome.name %>
+    <%= booking.gnome.power %>
+    <%= booking.start_date %>
+    <%= booking.end_date %>
+  </div>
+<% end %>
