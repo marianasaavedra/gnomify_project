@@ -12,12 +12,19 @@
   font-size: 70px;
 }
 
+.btn-light {
+  width: 230px;
+  padding: 5px;
+  margin: 10px;
+}
+
 .main-container {
   text-align: center;
 }
 
 .main-container a {
-  color: black;
+  color: $forest;
   text-decoration: none;
+  font-size: 30px;
+  font-family: sans-serif;
 }
-
