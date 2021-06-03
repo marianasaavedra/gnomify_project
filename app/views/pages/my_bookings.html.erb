@@ -1,10 +1,22 @@
-<h1>My Bookings</h1>
-<% @bookings.each do |booking| %>
-  <div>
-    <%= cl_image_tag booking.gnome.photo.key, height: 400, width: 400, crop: :fill%>
-    <%= booking.gnome.name %>
-    <%= booking.gnome.power %>
-    <%= booking.start_date %>
-    <%= booking.end_date %>
-  </div>
-<% end %>
+<div class="container">
+
+  <h1>My Bookings</h1>
+
+    <% @bookings.each do |booking| %>
+    <div class="card-horizontal">
+      <%= cl_image_tag booking.gnome.photo.key, height: 300, width: 300, crop: :fill, radius: 8 %>
+      <div class="card-horizontal-info">
+        <h3 class="gnome-name-title"><%= booking.gnome.name %></h3>
+        <p class="title">Power</p>
+        <p><%= booking.gnome.power %></p>
+        <p class="title">Start Date</p>
+        <p><%= booking.start_date %></p>
+        <p class="title">End Date</p>
+        <p class="end-date"><%= booking.end_date %></p>
+      </div>
+      <div class="status">
+        <p>Complete</p>
+      </div>
+    </div>
+    <% end %>
+</div>
