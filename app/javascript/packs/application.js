@@ -31,10 +31,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // import { initSelect2 } from '../components/init_select2';
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
+import { musicalButton } from '../button/button.js';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initFlatpickr();
+  musicalButton();
   // Call your functions here, e.g:
   // initSelect2();
 });
