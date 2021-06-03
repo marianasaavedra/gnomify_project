@@ -7,7 +7,8 @@ class GnomesController < ApplicationController
       @markers =  [{
           lat: @gnome.latitude,
           lng: @gnome.longitude,
-          image_url: helpers.asset_url('gnomey.png')
+          image_url: helpers.asset_url('gnomey.png'),
+          info_window: render_to_string(partial: "info_window", locals: { gnome: @gnome })
         }]
   end
 
