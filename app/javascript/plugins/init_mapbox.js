@@ -12,13 +12,15 @@ const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
       // Create a HTML element for your custom marker
     const element = document.createElement('div');
+    const popup = new mapboxgl.Popup().setHTML(marker.info_window);
     element.className = 'marker';
     element.style.backgroundImage = `url('${marker.image_url}')`;
     element.style.backgroundSize = 'contain';
-    element.style.width = '40px';
-    element.style.height = '40px';
+    element.style.width = '28px';
+    element.style.height = '28px';
     new mapboxgl.Marker(element)
       .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
       .addTo(map);
   });
 };

@@ -1,7 +1,13 @@
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('gnomes_house.jpg')%>">
+  <div class="container">
+    <h1>All our magical Gnomes</h1>
+  </div>
+</div>
+
 <div class="container">
+  <i class="fas fa-chevron-left"></i><%= link_to "  Back", root_path %>
   <h1>All our magical Gnomes</h1>
   <%= link_to "Back", root_path %>
-
   <div class="cards">
     <% if @gnomes.present? %>
       <% @gnomes.each do |gnome| %>
@@ -10,12 +16,12 @@
         <div class="card-img" style="background-image: url('<%= cl_image_path gnome.photo.key %>')">
         </div>
         <div class="card-gnome-info">
-          <h3 class="gnome-name"><%= gnome.name %></h3>
-          <p class="title">Power</p>
-          <p> <%= gnome.power %></p>
-          <p class="title">About</p>
-          <p> <%= gnome.description %> </p>
-          <p> €<%= gnome.price %> </p>
+           <h3 class="gnome-name"><%= gnome.name %></h3>
+           <p class="title">Power</p>
+           <p> <%= gnome.power %></p>
+           <p class="title">About</p>
+           <p> <%= gnome.description %> </p>
+           <p class="price w-25"> €<%= gnome.price %> </p>
         </div>
       </div>
         <% end %>
@@ -26,7 +32,6 @@
        <%= @message %>
     </div>
     <% end %>
-
 </div>
   <% if @gnomes.present? %>
   <div id="map"
