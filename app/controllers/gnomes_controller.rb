@@ -12,7 +12,14 @@ class GnomesController < ApplicationController
   end
 
   def index
-    @gnomes = Gnome.all
+    if params[:query].present?
+      @gnomes = Gnome.search_by_name_power_and_price(params[:query])
+      unless @gnomes.present?
+        @message = "Sorry, we could not find your gnome! try again :)"
+      end
+    else
+      @gnomes = Gnome.all
+    end
 
     @markers = @gnomes.geocoded.map do |gnome|
       {

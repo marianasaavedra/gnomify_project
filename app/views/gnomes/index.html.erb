@@ -3,28 +3,33 @@
   <%= link_to "Back", root_path %>
 
   <div class="cards">
-    <% @gnomes.each do |gnome| %>
-    <%= link_to gnome_path(gnome), class: "text-decoration-none" do %>
-    <div class="card-gnome p-0">
-      <div class="card-img" style="background-image: url('<%= cl_image_path gnome.photo.key %>')">
+    <% if @gnomes.present? %>
+      <% @gnomes.each do |gnome| %>
+      <%= link_to gnome_path(gnome), class: "text-decoration-none" do %>
+      <div class="card-gnome p-0">
+        <div class="card-img" style="background-image: url('<%= cl_image_path gnome.photo.key %>')">
+        </div>
+        <div class="card-gnome-info">
+          <h3 class="gnome-name"><%= gnome.name %></h3>
+          <p class="title">Power</p>
+          <p> <%= gnome.power %></p>
+          <p class="title">About</p>
+          <p> <%= gnome.description %> </p>
+          <p> €<%= gnome.price %> </p>
+        </div>
       </div>
-      <div class="card-gnome-info">
-        <h3 class="gnome-name"><%= gnome.name %></h3>
-        <p class="title">Power</p>
-        <p> <%= gnome.power %></p>
-        <p class="title">About</p>
-        <p> <%= gnome.description %> </p>
-        <p> €<%= gnome.price %> </p>
+        <% end %>
+        <% end %>
       </div>
-    </div>
-      <% end %>
-      <% end %>
-    </div>
+    <% else %>
+      <%= @message %>
+    <% end %>
 
 </div>
-
+  <% if @gnomes.present? %>
   <div id="map"
        style="width: 100%; height: 600px;"
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+  <% end %>
