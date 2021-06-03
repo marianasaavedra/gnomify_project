@@ -1,13 +1,13 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('forest.jpg')%>">
   <div class="main-container">
-    <h1>Experience the Gnomes</h1>
+    <h1>Behold the Gnomes</h1>
     <div class="btn btn-light">
-      <%= link_to "Check them out", gnomes_path %>
+      <%= link_to "Behold", gnomes_path %>
     </div>
   </div>
 </div>
 <div class="container">
-    <h1>Bring their magic home with you</h1>
+    <h1 class="title-homepage">Bring their magic home with you</h1>
   <div class="card-container">
     <% @gnomes.each do |gnome| %>
       <%= link_to gnome_path(gnome) do %>
