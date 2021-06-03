@@ -9,4 +9,11 @@ class Gnome < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   has_one_attached :photo
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_power_and_price,
+    against: [ :name, :power, :price ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
