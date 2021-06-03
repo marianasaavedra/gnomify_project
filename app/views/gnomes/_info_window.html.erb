@@ -1,0 +1,10 @@
+<% if action_name == "index" %>
+  <h4><%= gnome.name %></h4>
+  <p><%= gnome.address %></p>
+  <p> <%= gnome.power %> </p>
+  <div>
+    <%= link_to 'Book', gnome_path(gnome), class: 'btn btn-primary book-button' %>
+  </div>
+<% else %>
+  <p class="window-pop-up"><%= gnome.name%></p>
+<% end %>
