@@ -3,7 +3,9 @@
 </div>
 
 <div class="container">
-  <i class="fas fa-chevron-left mb-5"></i><%= link_to "  Back", root_path, id:"music-btn" %>
+  <%= link_to root_path do %>
+    <i class="fas fa-arrow-circle-left", id="music-btn"></i>
+  <% end %>
     <% @bookings.each do |booking| %>
     <div class="card-horizontal">
       <%= cl_image_tag booking.gnome.photo.key, height: 250, width: 240, crop: :fill, radius: 8 %>
