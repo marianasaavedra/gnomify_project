@@ -1,6 +1,11 @@
 <div class="banner-index d-flex align-items-center justify-content-center mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('mushrooms.jpg')%>">
   <h1>My bookings</h1>
 </div>
+<div class="flex-center mt-4" data-controller="counter">
+  <div class="counter">
+    <span data-counter-target="count"><%= @booking_count %></span>
+  </div>
+</div>
 
 <div class="container">
   <i class="fas fa-chevron-left mb-5"></i><%= link_to "  Back", root_path, id:"music-btn" %>

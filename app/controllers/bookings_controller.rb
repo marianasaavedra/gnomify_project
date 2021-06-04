@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   def create
     @gnome = Gnome.find(params[:gnome_id])
     @booking = Booking.new(booking_params)
