@@ -1,10 +1,12 @@
+<div class="banner-index d-flex align-items-center justify-content-center mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('mushrooms.jpg')%>">
+  <h1>My bookings</h1>
+</div>
+
 <div class="container">
-
-  <h1>My Bookings</h1>
-
+  <i class="fas fa-chevron-left mb-5"></i><%= link_to "  Back", root_path, id:"music-btn" %>
     <% @bookings.each do |booking| %>
     <div class="card-horizontal">
-      <%= cl_image_tag booking.gnome.photo.key, height: 300, width: 300, crop: :fill, radius: 8 %>
+      <%= cl_image_tag booking.gnome.photo.key, height: 250, width: 240, crop: :fill, radius: 8 %>
       <div class="card-horizontal-info">
         <h3 class="gnome-name-title"><%= booking.gnome.name %></h3>
         <p class="title">Power</p>
@@ -19,4 +21,5 @@
       </div>
     </div>
     <% end %>
+  </div>
 </div>
