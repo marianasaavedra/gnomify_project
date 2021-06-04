@@ -15,9 +15,6 @@ class GnomesController < ApplicationController
   def index
     if params[:query].present?
       @gnomes = Gnome.search_by_name_power_and_price(params[:query])
-      unless @gnomes.present?
-        @message = "Sorry, we couldn't find your gnome! Please try again :)"
-      end
     else
       @gnomes = Gnome.all
     end
