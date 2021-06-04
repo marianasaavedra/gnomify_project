@@ -1,13 +1,9 @@
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('gnomes_house.jpg')%>">
-  <div class="container">
-    <h1>All our magical Gnomes</h1>
-  </div>
+<div class="banner-index d-flex align-items-center justify-content-center mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('gnomes_house.jpg')%>">
+  <h1>Our magical Gnomes</h1>
 </div>
 
 <div class="container">
-  <i class="fas fa-chevron-left"></i><%= link_to "  Back", root_path %>
-  <h1>All our magical Gnomes</h1>
-  <%= link_to "Back", root_path %>
+  <i class="fas fa-chevron-left mb-5"></i><%= link_to "  Back", root_path, id:"music-btn" %>
   <div class="cards">
     <% if @gnomes.present? %>
       <% @gnomes.each do |gnome| %>
@@ -40,3 +36,13 @@
   </div>
   <% end %>
 </div>
+
+
+
+<script>
+  const audio = new Audio('https://www.soundjay.com/misc/magic-chime-01.mp3')
+  function loadImage() {
+  audio.play();
+  }
+  loadImage()
+</script>

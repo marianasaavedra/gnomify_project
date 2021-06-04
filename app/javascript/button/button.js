@@ -12,5 +12,4 @@ const musicalButton = () => {
   }
 };
 
-
 export { musicalButton };
