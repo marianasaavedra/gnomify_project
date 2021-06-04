@@ -15,6 +15,6 @@ class PagesController < ApplicationController
   end
 
   def set_counter
-    @booking_count = Booking.count
+    @booking_count = current_user.bookings.count
   end
 end
