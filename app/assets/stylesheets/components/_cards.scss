@@ -1,13 +1,14 @@
 .card-container {
   background-size: center;
   background-position: center;
-  height: 500px;
+  min-height: 500px;
   display: flex;
   color: white;
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   justify-content: space-evenly;
+  margin:10px;
 }
 
 .card-container a {

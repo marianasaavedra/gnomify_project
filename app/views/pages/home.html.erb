@@ -1,20 +1,24 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('forest.jpg')%>">
-  <div class="main-container">
+  <div class="main-container col-sm-6 col-lg-12">
     <h1>Behold the Gnomes</h1>
     <div class="btn btn-light">
-      <%= link_to "Behold", gnomes_path %>
+      <%= link_to "Discover", gnomes_path %>
     </div>
   </div>
 </div>
 <div class="container">
     <h1 class="title-homepage">Bring their magic home with you</h1>
   <div class="card-container">
-    <% @gnomes.each do |gnome| %>
+    <div class="row">
+      <% @gnomes.each do |gnome| %>
+      <div class="d-flex justify-content-between col-sm-6 col-md-4 class_style">
       <%= link_to gnome_path(gnome) do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path gnome.photo.key, height: 300, crop: :fill %>')">
         <p><%= gnome.name %></p>
       </div>
       <% end %>
+      </div>
     <% end %>
+    </div>
   </div>
 </div>
