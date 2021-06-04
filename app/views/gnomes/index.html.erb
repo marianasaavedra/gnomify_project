@@ -1,42 +1,45 @@
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('gnomes_house.jpg')%>">
-  <div class="container">
-    <h1>All our magical Gnomes</h1>
-  </div>
+<div class="banner-index d-flex align-items-center justify-content-center mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_path('gnomes_house.jpg')%>">
+  <h1>Our magical Gnomes</h1>
 </div>
 
 <div class="container">
   <%= link_to root_path do %>
-    <i class="fas fa-arrow-circle-left"> </i>
+    <i class="fas fa-arrow-circle-left"></i>
   <% end %>
   <div class="cards">
     <% if @gnomes.present? %>
       <% @gnomes.each do |gnome| %>
-      <%= link_to gnome_path(gnome), class: "text-decoration-none" do %>
-      <div class="card-gnome p-0">
-        <div class="card-img" style="background-image: url('<%= cl_image_path gnome.photo.key %>')">
-        </div>
-        <div class="card-gnome-info">
-           <h3 class="gnome-name"><%= gnome.name %></h3>
-           <p class="title">Power</p>
-           <p> <%= gnome.power %></p>
-           <p class="title">About</p>
-           <p> <%= gnome.description %> </p>
-           <p class="price w-25"> €<%= gnome.price %> </p>
-        </div>
-      </div>
+        <%= link_to gnome_path(gnome), class: "text-decoration-none" do %>
+          <div class="card-gnome p-0">
+            <div class="card-img" style="background-image: url('<%= cl_image_path gnome.photo.key %>')">
+            </div>
+              <div class="card-gnome-info">
+                 <h3 class="gnome-name"><%= gnome.name %></h3>
+                 <p class="title">Power</p>
+                 <p> <%= gnome.power %></p>
+                 <p class="title">About</p>
+                 <p> <%= gnome.description %> </p>
+                 <p class="price w-25"> €<%= gnome.price %> </p>
+              </div>
+            </div>
+          <% end %>
         <% end %>
-        <% end %>
-      </div>
-    <% else %>
-    <div class="message">
-       <%= @message %>
     </div>
-    <% end %>
-    <% if @gnomes.present? %>
-  <div id="map"
-       style="width: 100%; height: 600px;"
-       data-markers="<%= @markers.to_json %>"
-       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div id="map"
+         style="width: 100%; height: 600px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-  <% end %>
+    <% end %>
 </div>
+
+
+
+<script>
+  function loadImage() {
+  let audio_file = new Audio('https://www.soundjay.com/misc/magic-chime-01.mp3')
+  audio_file.play();
+  }
+  loadImage()
+</script>

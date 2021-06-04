@@ -1,8 +1,12 @@
-<div class="form-inline">
-  <%= form_tag gnomes_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-controls", style: "width: 300px",
-      placeholder: "Find a gnome"%><%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+<div class="py-3 d-flex justify-content-center">
+  <div class="col-8">
+  <div class="col-12">
+      <%= form_tag gnomes_path, method: :get, class: 'form-inline flex-grow-1' do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control flex-grow-1",
+          placeholder: "Find a gnome"%><%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+  </div>
+  </div>
 </div>

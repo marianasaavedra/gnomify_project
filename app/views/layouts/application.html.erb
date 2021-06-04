@@ -13,9 +13,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body class='module-toad'>
     <div class="page-container">
       <%= render "shared/navbar" %>
+      <%= render "shared/search-form" %>
       <%= render "shared/flashes" %>
     <main id="main-content">
       <%= yield %>
