@@ -7,7 +7,6 @@
 <div class="container">
   <i class="fas fa-chevron-left"></i><%= link_to "  Back", root_path %>
   <h1>All our magical Gnomes</h1>
-  <%= link_to "Back", root_path %>
   <div class="cards">
     <% if @gnomes.present? %>
       <% @gnomes.each do |gnome| %>
