@@ -1,4 +1,7 @@
 <div class="gnome-container col-sm-6 col-lg-12">
+  <%= link_to root_path do %>
+    <i class="fas fa-arrow-circle-left", id="music-btn"></i>
+  <% end %>
   <div class="card-gnome d-flex justify-content-between">
     <div class="card-gnome-infos">
       <%= cl_image_tag @gnome.photo.key, height: 400, width: 400, crop: :fill %>
@@ -15,7 +18,6 @@
               <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
               <div class="form-buttons">
                 <%= f.button :submit, "Book Gnome", class: "btn btn-primary" %>
-                <%= link_to "Back", gnomes_path, id:"music-btn" %>
               </div>
             <% end %>
         </div>

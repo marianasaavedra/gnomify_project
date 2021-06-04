@@ -41,12 +41,20 @@
   color: white;
 }
 
-h1 {
-  text-align: center
+h3 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  font-size: 22px;
 }
 
 .title-homepage {
   color: $forest;
-  margin-bottom: 100px;
-  font-size: 50px;
+  margin-bottom: 0px;
+}
+
+.title-paragraph-homepage {
+  margin-bottom: 4rem;
 }
